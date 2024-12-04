@@ -2,7 +2,7 @@ function getNumbers() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([1, 2, 3, 4]);
-    }, 3000);
+    }, 1000); 
   });
 }
 
@@ -12,7 +12,7 @@ function filterEvenNumbers(numbers) {
       const evenNumbers = numbers.filter((num) => num % 2 === 0);
       document.getElementById("output").textContent = evenNumbers.join(", ");
       resolve(evenNumbers);
-    }, 1000);
+    }, 500);
   });
 }
 
@@ -22,7 +22,7 @@ function multiplyByTwo(numbers) {
       const multipliedNumbers = numbers.map((num) => num * 2);
       document.getElementById("output").textContent = multipliedNumbers.join(", ");
       resolve(multipliedNumbers);
-    }, 2000);
+    }, 500);
   });
 }
 
@@ -31,5 +31,5 @@ getNumbers()
   .then(multiplyByTwo)
   .catch((error) => {
     document.getElementById("output").textContent = `Error: ${error}`;
-    console.error("An error occurred:", error); 
+    console.error("An error occurred:", error);
   });
